@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "ancientreminder",
+  "version": "${version}",
+  "name": "Ancient Reminder",
+  "description": "Erinnert dich an offen liegenden Ancient Debris.",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["de.example.ancientreminder.AncientReminderClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "fabric-api": "*",
+    "minecraft": "~1.21.11",
+    "java": ">=21"
+  }
+}
