@@ -189,7 +189,7 @@ public class AncientReminderClient implements ClientModInitializer {
         Set<Long> current = new HashSet<>();
         List<Hit> found = new ArrayList<>();
         BlockPos center = player.getBlockPos();
-        Vec3d playerPos = player.getPos();
+        Vec3d playerPos = new Vec3d(player.getX(), player.getY(), player.getZ());
 
         Hit closestNew = null;
         double closestDist = Double.MAX_VALUE;
@@ -228,7 +228,7 @@ public class AncientReminderClient implements ClientModInitializer {
                 Target t = itemMap.get(item.getStack().getItem());
                 long key = item.getBlockPos().asLong() ^ 0x5DEECE66DL;
                 current.add(key);
-                Hit hit = new Hit(item.getPos().add(0, 0.25, 0), t);
+               Hit hit = new Hit(new Vec3d(item.getX(), item.getY() + 0.25, item.getZ()), t);
                 found.add(hit);
 
                 if (!known.contains(key)) {
